@@ -5,4 +5,4 @@ import ProductHeader from "./components/ProductHeader";
 
 
 
-export default App
+export default App;
