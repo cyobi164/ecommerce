@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import ProductHeader from "./ProductHeader";
+import AOS from "aos"
+import "aos/dist/aos.css"
 import "./style.css"
 
 const ProductMain = () => {
+
+    useEffect(() => {
+        AOS.init({duration: 1000});
+    }, []);
+
     const [products, setProducts] = useState([
         {id:1, name: "....", price: "...", qty: "100" /*image:*/},
         {id:2, name: "....", price: "...", qty: "200" /*image:*/}
     ]);
 
     const updateQuantity = (id, change) => {
-        setProducts(products.map(p => p,id === id ? {...p, qty: Math.max(1, p.qty + change)} : p));
+        setProducts(products.map(p => p.id === id ? {...p, qty: Math.max(1, p.qty + change)} : p));
     };
 
     const subtotal = products.reduce((acc, p) => acc + p.price * p.qty, 0);

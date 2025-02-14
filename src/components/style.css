@@ -59,6 +59,7 @@ nav .btn{
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card img{
@@ -66,7 +67,7 @@ nav .btn{
     height: 100px;
 }
 
-.close bth{
+.close-bth{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -125,6 +126,45 @@ nav .btn{
     padding: 1rem 2rem;
     font-size: 1rem;
     border:none;
-    border-radius: 15px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transfrom 0.2ease;
     cursor: pointer;
+}
+
+.checkout-bth:hover{
+    background: #ffaa00;
+    transform: scale(1.05);
+}
+
+/*animation*/
+.top-product{
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    transform-style: preserve-3d;
+    transition: transfrom 0.3s ease-in-out;
+}
+
+.top-product:hover{
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featured-img{
+    width: 200px;
+    height: auto;
+    transition: transfrom 0.3s ease-in-out;
+}
+
+.featured-img:hover{
+    transform: scale(1.1);
+}
+
+.product-card{
+    transition: transfrom 0.3s ease-in-out;
+}
+
+.product-card:hover{
+    transform: scale(1.05) rotateZ(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
