@@ -1,19 +1,22 @@
 import React from "react";
-import { ShoppingCart, User} from "lucide-react";
+import { ShoppingCart, User } from "lucide-react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./style.css";
 
-function Header() {
-    return (
-        <header className="header">
-          <nav className="nav">
-            <div className="logo">MEKA</div>
-            <input type="text" placeholder="Search product..." className="search-bar" />
-            <div className="nac-icons">
-              <a href="/login"><User size={26} /></a>
-              <a href="/cart"><ShoppingCart size={24} /></a>
-            </div>
-          </nav>
-        </header>
-    )
-}
+const ProductHeader = () => {
+  return (
+    <div className="header">
+      <div className="logo">.....</div>
+      <nav>
+        <button className="bth">Product</button>
+        <button className="bth">Contact</button>
+      </nav>
+      <div className="icons">
+        <User size={25} />
+        <ShoppingCart size={25} />
+      </div>
+    </div>
+  );
+};
 
-export default Header;
+export default ProductHeader;

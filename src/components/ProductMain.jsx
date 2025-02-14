@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
+import ProductHeader from "./ProductHeader";
+import "./style.css"
 
-const products = [
-  { id: 1, name: "Product 1", price: "$20", image: "https://via.placeholder.com/150" },
-  { id: 2, name: "Product 2", price: "$30", image: "https://via.placeholder.com/150" },
-  { id: 3, name: "Product 3", price: "$25", image: "https://via.placeholder.com/150" },
-  { id: 4, name: "Product 4", price: "$40", image: "https://via.placeholder.com/150" },
-];
+const ProductMain = () => {
+    const [products, setProducts] = useState([
+        {id:1, name: "....", price: "...", qty: "100" /*image:*/},
+        {id:2, name: "....", price: "...", qty: "200" /*image:*/}
+    ]);
 
-const MainContent = () => {
-  return (
-    <div className="container mt-4">
-      <h2 className="text-center mb-4">Our Products</h2>
-      <div className="row">
-        {products.map((product) => (
-          <div className="col-md-3" key={product.id}>
-            <ProductCard name={product.name} price={product.price} image={product.image} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    const updateQuantity = (id, change) => {
+        setProducts(products.map(p => p,id === id ? {...p, qty: Math.max(1, p.qty + change)} : p));
+    };
+
+    const subtotal = products.reduce((acc, p) => acc + p.price * p.qty, 0);
+    const tax = subtotal * 0.1724;
+    const total = subtotal + tax;
+
+    return(
+        <div className="product-page">
+            <ProductHeader />
+            <div className="product-container">
+                {products.map (product => (
+                    <ProductCard key={product.id} product={product} updateQuantity={updateQuantity} />
+                ))}
+            </div>
+            <div className="checkout-bar">
+                <div className="checkout-box">Subtotal: ${subtotal.toFixed(2)}</div>
+                <div className="checkout-box">Tax: ${tax.toFixed(2)}</div>
+                <div className="checkout-box total">Total: ${total.toFixed(2)}</div>
+                <button className="checkout-bth">Checkout</button>
+            </div>
+        </div>
+    );
+    
 };
 
-export default MainContent;
+
+export default ProductMain;

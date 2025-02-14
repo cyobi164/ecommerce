@@ -1,0 +1,130 @@
+/* general */
+body{
+    font-family: Arial, sans-serif;
+    background: #3f6b92;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*header css*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .btn{
+    margin: 0 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.icons svg{
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+/*product container*/
+.product-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/*product card*/
+.product-card{
+    background: #fff;
+    margin: 10px;
+    color: black;
+    padding: 1.5rem;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.product-card img{
+    width: 100px;
+    height: 100px;
+}
+
+.close bth{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.quantity-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.quantity-control button{
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.price{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*checkout bar*/
+.checkout-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.checkout-box{
+    background: #fff;
+    color: #000;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 110px;
+    text-align: center;
+}
+
+.checkout-box .total{
+    background: #bedbf9;
+}
+
+.checkout-bth{
+    background: #ffcc00;
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border:none;
+    border-radius: 15px;
+    cursor: pointer;
+}
